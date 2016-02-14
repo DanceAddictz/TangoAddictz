@@ -1,4 +1,4 @@
-package com.tangoaddictz.danceaddictz.tangoaddictz;
+package com.danceaddictz.tangoaddictz;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
