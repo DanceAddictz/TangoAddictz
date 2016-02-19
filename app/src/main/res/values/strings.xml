@@ -7,4 +7,5 @@
     <string name="title_activity_login">LoginActivity</string>
 
     <string name="title_activity_splash">"Tango\nAddictz"</string>
+    <string name="logout">Logout</string>
 </resources>
