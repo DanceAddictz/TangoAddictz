@@ -8,11 +8,17 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import com.danceaddictz.tangoaddictz.R;
 
 public class LoginActivity extends AppCompatActivity {
 
+    int[] gal = {R.drawable.login_bg_one, R.drawable.login_bg_two, R.drawable.login_bg_three};
+    int count = 1;
     public static Intent makeIntent(Context context){
 
         Intent intent = new Intent(context,LoginActivity.class);
@@ -26,21 +32,50 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+/*
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+*/
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+
+        final ImageView bg = (ImageView) findViewById(R.id.img_background);
+        final Animation zoomout = AnimationUtils.loadAnimation(this, R.anim.zoomout);
+        bg.setAnimation(zoomout);
+
+        zoomout.setAnimationListener(new Animation.AnimationListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                bg.setImageResource(gal[count++]);
+                if(count == gal.length)
+                    count = 0;
+
+                bg.startAnimation(zoomout);
             }
         });
+
+        Button btn = (Button) findViewById(R.id.btn_signin);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(HomeActivity.makeIntent(LoginActivity.this));
+            }
+        });
+
     }
 
 }

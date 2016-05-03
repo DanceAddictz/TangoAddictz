@@ -33,6 +33,7 @@ public class SplashActivity extends AppCompatActivity {
         // tx1.setTypeface(custom_font);
         tx2.setTypeface(custom_font);
 
+
         new BackgroundSplashTask().execute();
     }
 
