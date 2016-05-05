@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">TangoAddictz</string>
+    <string name="app_name">DanceAddictz</string>
     <string name="action_settings">Settings</string>
     <string name="splash_text_2">Addictz</string>
-    <string name="splash_text_1">Tango</string>
+    <string name="splash_text_1">Dance</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_activity_login">LoginActivity</string>
 
-    <string name="title_activity_splash">"Tango\nAddictz"</string>
+    <string name="title_activity_splash">"Dance\nAddictz"</string>
     <string name="logout">Logout</string>
     <string name="search">Search</string>
     <string name="sign_up">Sign up</string>
