@@ -10,7 +10,11 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.danceaddictz.danceaddictz.R;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -18,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     int count = 1;
     Animation zoomin;
     Animation zoomout;
+    CallbackManager callbackManager;
 
 
     public static Intent makeIntent(Context context){
@@ -37,14 +42,20 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+
 /*
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 */
 
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        callbackManager = CallbackManager.Factory.create();
+        AppEventsLogger.activateApp(this);
+
+        setContentView(R.layout.activity_login);
 
         final ImageView bg = (ImageView) findViewById(R.id.img_background);
+
         zoomout = AnimationUtils.loadAnimation(this, R.anim.zoom_out);
         bg.setAnimation(zoomout);
 
@@ -62,8 +73,12 @@ public class LoginActivity extends AppCompatActivity {
                     if (count == gal.length)
                         count = 0;
 
-                    int i = gal[count++];
-                    bg.setImageResource(i);
+                    /*int i = gal[count++];
+                    bg.setImageResource(i);*/
+
+                    Glide.with(LoginActivity.this)
+                            .load(gal[count++])
+                            .into(bg);
 
 
                     bg.startAnimation(zoomin);
@@ -89,8 +104,10 @@ public class LoginActivity extends AppCompatActivity {
                     if (count == gal.length)
                         count = 0;
 
-                    int i = gal[count++];
-                    bg.setImageResource(i);
+                    Glide.with(LoginActivity.this)
+                            .load(gal[count++])
+                            .into(bg);
+                    //bg.setImageResource(i);
 
 
                     bg.startAnimation(zoomout);
@@ -104,13 +121,17 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        Button btn = (Button) findViewById(R.id.btn_signin);
+        Glide.with(LoginActivity.this)
+                .load(R.drawable.login_bg_one)
+                .into(bg);
+
+       /* Button btn = (Button) findViewById(R.id.btn_signin);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(HomeActivity.makeIntent(LoginActivity.this));
             }
-        });
+        });*/
 
     }
 
