@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "404953963971",
+    "project_id": "danceaddictz-1316"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:404953963971:android:8d3a89387689ff1f",
+        "android_client_info": {
+          "package_name": "com.danceaddictz.danceaddictz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "404953963971-fes0o7ftt2mnlbag03o4v56mjbbdc44t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.danceaddictz.danceaddictz",
+            "certificate_hash": "5355B16CD1B4FA8EFC43E40B3BF77F8E8EBD5387"
+          }
+        },
+        {
+          "client_id": "404953963971-bgmmja8pvmtdo2k74ea2ob0mehs4ictm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQfrzuh6UDer2463dF-N9p-_xK5UsTCCo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
