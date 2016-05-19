@@ -81,4 +81,18 @@ public class AddictzPreferences {
     public static void clearStringData(String key, Context context) {
         getSharedPrefernces(context).edit().remove(key).apply();
     }
+
+    public static void removeData(Context context) {
+        AddictzPreferences.putInt(AddictzConstants.ID, -1, context);
+        AddictzPreferences.putInt(AddictzConstants.LOGIN_TYPE, -1, context);
+        AddictzPreferences.putString(AddictzConstants.USER_NAME, "", context);
+        AddictzPreferences.putString(AddictzConstants.EMAIL, "", context);
+        AddictzPreferences.putString(AddictzConstants.AUTH_KEY, "", context);
+        AddictzPreferences.putString(AddictzConstants.REST_KEY, "", context);
+        AddictzPreferences.putString(AddictzConstants.FACEBOOK_ID, "", context);
+        AddictzPreferences.putString(AddictzConstants.GOOGLE_ID, "", context);
+        AddictzPreferences.putString(AddictzConstants.MOBILE, "", context);
+        AddictzPreferences.putString(AddictzConstants.GENDER, "", context);
+
+    }
 }
