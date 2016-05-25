@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -108,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
 
         final ImageView bg = (ImageView) findViewById(R.id.img_background);
 
-        zoomout = AnimationUtils.loadAnimation(this, R.anim.zoom_out);
+        zoomout = AnimationUtils.loadAnimation(this, R.anim.zoomout);
         bg.setAnimation(zoomout);
 
         zoomout.setAnimationListener(new Animation.AnimationListener() {
@@ -138,7 +137,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        zoomin = AnimationUtils.loadAnimation(this, R.anim.zoom_in);
+        zoomin = AnimationUtils.loadAnimation(this, R.anim.zoomin);
         zoomin.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
