@@ -32,4 +32,5 @@
     </string>
     <string name="or">Or</string>
     <string name="loading">Almost done..</string>
+    <string name="action_forgot_pwd"><u>Forgot Password</u></string>
 </resources>

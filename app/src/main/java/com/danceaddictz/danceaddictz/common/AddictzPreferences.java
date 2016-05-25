@@ -85,6 +85,7 @@ public class AddictzPreferences {
     public static void removeData(Context context) {
         AddictzPreferences.putInt(AddictzConstants.ID, -1, context);
         AddictzPreferences.putInt(AddictzConstants.LOGIN_TYPE, -1, context);
+        AddictzPreferences.putString(AddictzConstants.NAME, "", context);
         AddictzPreferences.putString(AddictzConstants.USER_NAME, "", context);
         AddictzPreferences.putString(AddictzConstants.EMAIL, "", context);
         AddictzPreferences.putString(AddictzConstants.AUTH_KEY, "", context);

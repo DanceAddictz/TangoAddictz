@@ -61,7 +61,11 @@ public class HomeActivity extends AppCompatActivity {
 
         toolbar.setLogo(R.mipmap.ic_launcher);
         toolbar.setTitle(getResources().getString(R.string.app_name));
-        toolbar.setSubtitle("Welcome, " + AddictzPreferences.getString(AddictzConstants.NAME, this));
+        String name = AddictzPreferences.getString(AddictzConstants.NAME, this);
+        if(name==null || name.length()==0)
+            name = "DanceAddict";
+
+        toolbar.setSubtitle("Welcome, " + name);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -129,6 +133,9 @@ public class HomeActivity extends AppCompatActivity {
             signoutFB();
         }else{
             //addictz signout
+            //TODO: Signout from backend
+
+            clearAccAndGoToLogin();
         }
 
 

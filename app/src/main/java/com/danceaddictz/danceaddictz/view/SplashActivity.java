@@ -115,9 +115,10 @@ public class SplashActivity extends AppCompatActivity {
                     Profile.fetchProfileForCurrentAccessToken();
                     Profile profile = Profile.getCurrentProfile();
                     return profile != null;
-                }else
-                    return !TextUtils.isEmpty(AddictzPreferences.getString(AddictzConstants.AUTH_KEY, SplashActivity.this));
-
+                }else {
+                    //TODO: check for auth token
+                    return !TextUtils.isEmpty(AddictzPreferences.getString(AddictzConstants.EMAIL, SplashActivity.this));
+                }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
