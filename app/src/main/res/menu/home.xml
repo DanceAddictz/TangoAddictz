@@ -2,14 +2,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".view.HomeActivity">
+
+
+
     <item  android:id="@+id/action_search"
         app:showAsAction="always"
         android:title="@string/search"
-        android:icon="@drawable/ic_menu_search"/>
+        android:icon="@drawable/ic_action_search"/>
 
-    <item
+    <!--<item
         android:id="@+id/action_logout"
         app:showAsAction="collapseActionView"
         android:title="@string/logout">
-    </item>
+    </item>-->
 </menu>

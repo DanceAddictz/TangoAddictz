@@ -33,4 +33,7 @@
     <string name="or">Or</string>
     <string name="loading">Almost done..</string>
     <string name="action_forgot_pwd"><u>Forgot Password</u></string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

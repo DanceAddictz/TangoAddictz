@@ -319,14 +319,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderManager.Lo
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }*/
+
+                                startActivity(HomeActivity.makeIntent(LoginActivity.this));
                             }
                         });
                 Bundle parameters = new Bundle();
                 parameters.putString("fields", "id,name,email,gender,birthday,age_range");
                 request.setParameters(parameters);
                 request.executeAsync();
-
-                startActivity(HomeActivity.makeIntent(LoginActivity.this));
 
             }
 
